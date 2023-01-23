@@ -1,0 +1,68 @@
+body{
+    background-color: #fba4cb;
+}
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+}
+nav a{
+   color : white;
+
+}
+nav a:hover{
+    color: black;
+}
+main p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: white;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+}
+.qoute{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    color: white;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+}
+.name{
+    color: white;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.msg{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: black;
+    width: 55%;
+    margin: 0 auto;
+    text-align: left;
+
+}
+img {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+  }
+.p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: center;
+    color: black;
+    width: 20%;
+    margin: 0 auto;
+  }
+  footer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: center;
+    color: black;
+    width: 50%;
+    margin: 0 auto;
+  }

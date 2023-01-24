@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Kalam:wght@300&display=swap');
 #content{
     max-width: 1600px;
     margin: 0 auto;
+    font-size: 22px;
+}
+#logo_link{
+    padding-top: 5px;
 }
 nav a{
     text-align: center;
     color: black;
     text-decoration: none;
+    padding: 35px;
 }
 #hero_msg h1, #hero_msg h4{
     text-align: center;
@@ -18,12 +24,15 @@ nav a{
 }
 main section{
     text-align: center;
+    box-sizing: border-box;
 }
 #background {
     height: 725px;
 }
 body {
     background-color: #bde0fe;
+    margin: 0;
+    padding: 0;
 }
 header{
     background-color: white;
@@ -34,6 +43,12 @@ nav a:hover{
 }
 .home-title{
     color: black;
+    font-family: "Cinzel Decorative", Helvetica, sans-serif;
+    font-size: 2em;
+    margin-top: 10px;
+}
+h2{
+    margin: 0;
 }
 h4{
     color: black;
@@ -42,6 +57,22 @@ h4{
     background-color: #bde0fe;
     color: black;
     text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+.rivers_cards{
+    margin: 200px;
+}
+.camping_cards{
+    margin: 200px;
+}
+.rapids_cards{
+    margin: 200px;
+}
+.card_img{
+    border: 10px solid black;
 }
 .book:hover, .join:hover{
     background-color: #ffc8dd;
@@ -52,22 +83,30 @@ h4{
 }
 .msg{
     background-color: #ffc8dd;
+    line-height: 1.5em;
+    padding: 35px;
 }
 .msg h2{
     color: black;
+    font-family: Kalam, Helvetica, sans-serif;
 }
 .msg p{
     color: black;
+    font-size: .8em ;
+    padding-bottom: 15px;
 }
 .logo{
     width: 80px;
 }
 .icon{
     width: 80px;
+    padding-top: 10px;
 }
 footer{
     background-color: #ffc8dd;
     color: black;
+    padding: 25px 50px;
+    margin-top: 200px;
 }
 footer p a:hover{
     text-decoration: underline;
@@ -83,4 +122,7 @@ footer a{
 footer a:hover{
     background-color: #bde0fe;
     color: black;
+}
+footer .social img{
+    padding-top: 15px;
 }

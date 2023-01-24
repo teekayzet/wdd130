@@ -1,3 +1,6 @@
+  body{
+    margin: 0;
+  }
   h1{
     text-align: center;
   }
@@ -9,7 +12,11 @@
   }
   nav {
     background-color: steelblue;
-    padding: 10px;
+    padding: 25px;
+  }
+  a{
+    color: white;
+    padding: 25px;
   }
   a:hover {
     background-color: white;
@@ -18,11 +25,13 @@
   }
   h1 {
     color: steelblue;
+    margin: 50px 0;
   }
   img {
     display: block;
     margin: 0 auto;
     width: 80%;
+    border: 4px solid steelblue;
   }
   p {
     padding: 10px;
@@ -40,12 +49,12 @@
   background-color: white;
   color: steelblue;
 }
- /* footer {
+footer {
     background-color: steelblue;
     color: white;
-  }*/
+  }
   footer p{
-    font-size: 20px;
+    font-size: 25px;
     margin: 20px auto;
   }
   /* to centralize an image use  margin: 0 auto;

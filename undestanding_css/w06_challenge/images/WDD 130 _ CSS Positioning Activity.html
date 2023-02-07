@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://byui-wdd.github.io/wdd130/activities/w06-css-positioning.html -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>WDD 130 | CSS Positioning Activity</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="stylesheet" href="./WDD 130 _ CSS Positioning Activity_files/prism-light.css">
+  <link href="./WDD 130 _ CSS Positioning Activity_files/course.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="content">
+    <header class="headerBanner">
+      <div>
+        <h1><span>WEB</span> Fundamentals</h1>
+        <h2>WDD 130</h2>
+      </div>
+    </header>
+    <main>
+      <h1>CSS Positioning Activity</h1>
+      <hr>
+      <h2>Activity&nbsp;Instructions</h2>
+      <ol class="bigSteps">
+        <li>
+          <!-- START STEP -->
+          <h3>Get the HTML and CSS file for the activity</h3>
+          <p>To get the files you need,
+            <a href="https://byui-wdd.github.io/wdd130/resources/positioning.zip">download the files</a>
+            and save them into your local repository,
+            <kbd>positioning.html</kbd> and <kbd>positionstyles.css</kbd>, as
+            part of your project. Save them at the root level (or in other words, not inside any folders.)
+          </p>
+          <!-- END STEP  -->
+        </li>
+        <li>
+          <!-- START STEP -->
+          <h3>Solve the challenges</h3>
+          <p>
+            Modify the CSS to make the boxes in the HTML match the patterns in
+            the images for each activity.
+          </p>
+          <p>Pay attention to the drop-down 'hints' for each one</p>
+          <img src="./WDD 130 _ CSS Positioning Activity_files/hints.png" alt="hint image">
+
+          <!-- END STEP  -->
+        </li>
+        <li>
+          <!-- START STEP -->
+          <h3>Exercise 1</h3>
+          <p>To help get you started, we will solve exercise 1 together.</p>
+          <p>
+            Begin by looking at the image indicating what we are trying to do.
+            It should look like the figure below:
+          </p>
+          <div class="fig-block">
+            <figure>
+              <img src="./WDD 130 _ CSS Positioning Activity_files/example1.png" alt="exercise 1 example">
+              <figcaption>Exercise 1</figcaption>
+            </figure>
+          </div>
+          <p>
+            For this first exercise, I've given you a little extra information
+            with the image. It includes the Grid lines so you can easily see
+            how it is structured. We can quickly see that this is a Grid with
+            two columns and four rows. There is also a gap between the rows and
+            columns.
+          </p>
+          <p>Take a look also at the HTML we have to work with.</p>
+          <pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blue1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                        </code></pre>
+          <p>
+            The first step with using CSS Grid is to identify which elements
+            we are trying to move (these will be the Grid Items or Children)
+            and then find their parent (this will be the Grid container or
+            parent). CSS Grid is turned on at the parent. Once we do that,
+            <em>all</em> of the direct children of that element become Grid
+            Items. Because of this, it is helpful if all of the elements we
+            need to position share a common parent.
+          </p>
+          <p>
+            In this case, we want to move the colored boxes (<kbd>red1, green1, yellow1, blue1</kbd>), and lucky for us,
+            they all share a common parent already: <kbd>content1</kbd>
+          </p>
+          <!-- END STEP  -->
+        </li>
+        <li>
+          <!-- START STEP -->
+          <h3>Adjust the box sizes</h3>
+          <p>
+            Before we start our Grid, let's take a moment and make sure the
+            boxes are all the right size and shape. The image above shows that
+            <kbd>red</kbd> and <kbd>blue</kbd> should be full width. An easy
+            way to make something full width is to set it's
+            <kbd>width</kbd> to <kbd>100%</kbd>. Change the <kbd>px</kbd> on
+            the existing rules to a <kbd>%</kbd>.
+          </p>
+          <p>
+            <kbd>green</kbd> and <kbd>yellow</kbd> look to be about twice
+            their current size. So let's change their <kbd>height</kbd> and
+            <kbd>width</kbd> to be <kbd>200px</kbd>.
+          </p>
+
+          <!-- END STEP  -->
+        </li>
+        <li>
+          <!-- START STEP -->
+          <h3>Turn on CSS Grid</h3>
+          <div class="callout">
+            For the rest of this activity, it will be helpful if you open this
+            link:
+            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS-Tricks Guide to
+              Grid</a>
+            and keep it handy.
+          </div>
+          <p>
+            Switch to the CSS file now (<kbd>positionstyles.css</kbd>) and
+            find the section of code for the first exercise. You will find
+            that there is already a rule defined for <kbd>.content1</kbd>.
+            Enable Css Grid for that element by adding the line
+            <kbd>display: grid;</kbd> to that rule.
+          </p>
+          <p>
+            You will notice that nothing changed! We have to define at least
+            the columns of the Grid we need before anything happens. Let's do
+            that next. If you review the example image again, you will see that
+            we need two equal columns for our grid. That is easy to do with
+            the <kbd>fr</kbd> unit and the
+            <kbd>grid-template-columns</kbd> property. If we add that, our rule
+            should look like the following:
+          </p>
+          <pre class=" language-css"><code class=" language-css"><span class="token selector">.content1</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* This is the parent of the activity 1 boxes. */</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+    <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 1fr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+                        </code></pre>
+          <p>
+            As soon as you define those columns you should see a change. It
+            should look similar to the figure below:
+          </p>
+          <div class="fig-block">
+            <figure>
+              <img src="./WDD 130 _ CSS Positioning Activity_files/example1-halfway.png" alt="exercise 1 example">
+              <figcaption>Exercise 1 halfway there!</figcaption>
+            </figure>
+          </div>
+          <p>It's actually a lot closer to finished than it might appear!</p>
+          <!-- END STEP  -->
+        </li>
+        <li>
+          <!-- START STEP -->
+          <h3>Finishing up</h3>
+          <p>
+            To get our layout to match the image, we really only have three
+            steps left. The first is to tell <kbd>red</kbd> and
+            <kbd>blue</kbd> that they should take up <em>two</em> columns
+            instead of the default one. And then we need to adjust the
+            horizontal alignment of the yellow and green boxes. Finally, we
+            need to add some space between the columns and rows.
+          </p>
+          <p>
+            We can use the <kbd>grid-column</kbd> property to specify how many
+            columns an element should span. Remember that when using this
+            property, we specify the column by describing the grid lines it
+            falls between. If you look at the example image again, you will
+            notice that there are numbers along the top edge. If we want
+            something in column one, we would place it between line 1 and line
+            2. If we want something to take up all of columns 1 <em>and</em> 2
+            then we would place it <em>between</em> lines 1 and 3! Look at the
+            CSS below to see what this would look like for the red box.
+          </p>
+          <pre class=" language-css"><code class=" language-css"><span class="token selector">.red1</span> <span class="token punctuation">{</span> 
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+    <span class="token property">grid-column</span><span class="token punctuation">:</span> 1/3<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+                        </code></pre>
+          <p>Do the same to the blue box.</p>
+          <p>
+            Horizontal alignment is controlled with the
+            <kbd>justify-</kbd> properties. In this case, the specific one we
+            want is <kbd>justify-items</kbd>. We can add this to our grid
+            container to center the yellow and green boxes. My rule now looks
+            like this:
+          </p>
+          <pre class=" language-css"><code class=" language-css"><span class="token selector">.content1</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* This is the parent of the activity 1 boxes. */</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+    <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 1fr<span class="token punctuation">;</span>
+    <span class="token property">justify-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+          <p>
+            Almost there now! One last item. We are supposed to have some
+            space (called a gap) between our rows and columns. We can use the
+            <kbd>grid-gap</kbd> property to add this. I think about <kbd>20px</kbd>
+            should be good. My final CSS for my grid container looks like
+            this:
+          </p>
+          <pre class=" language-css"><code class=" language-css"><span class="token selector">.content1</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* This is the parent of the activity 1 boxes. */</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+        <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 1fr 1fr<span class="token punctuation">;</span>
+        <span class="token property">justify-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+        <span class="token property">grid-gap</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+          <p>Done!</p>
+          <!-- END STEP  -->
+        </li>
+        <li>
+          <!-- START STEP -->
+          <h3>Exercises 2–6</h3>
+          <p>
+            Now complete the rest of the exercises. Help each other out! Here
+            are a few final tips as well.
+          </p>
+          <div class="callout">
+            <h3>Tips</h3>
+            <ol>
+              <li>
+                Don't overuse <kbd>position</kbd>. At first, it might seem to
+                be the answer to your positioning prayers, but it can quickly
+                become a nightmare if overused. Try to solve layout problems
+                with other methods first and fallback to position only if
+                they don't work.
+              </li>
+              <li>
+                Remember that <kbd>margin</kbd> is a great way to shift things
+                around short distances (and
+                <kbd>margin-top: -50px;</kbd> would move an element
+                <strong>up</strong> by <kbd>50px</kbd>).
+              </li>
+              <li>
+                When using <kbd>float</kbd> remember that the element that you
+                are floating must come before the other elements in the HTML.
+                Also remember to <kbd>clear</kbd> your floats when you want
+                things to stop floating.
+              </li>
+              <li>
+                CSS Grid is a great way to position elements. Most of these
+                can be most easily solved by using it. Remember that to use
+                CSS Grid, first find the elements you want to adjust, then find
+                their parent. Use <kbd>display: grid;</kbd> on that parent.
+                Also, here are a couple of good resources to help you with CSS
+                Grid:
+                <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS-Tricks Guide to
+                  Grid</a> and
+                <a href="http://cssgridgarden.com/" target="_blank">Grid Garden.</a>
+              </li>
+              <li>
+                You should be able to solve all of these positioning problems
+                <strong>without</strong> modifying the HTML. If you find
+                yourself tempted to tweak the HTML, you are probably working
+                too hard.
+              </li>
+              <li>
+                If you are struggling with an activity, start by simply making
+                the boxes the right size and shape. It will often help you to
+                see where to go next.
+              </li>
+              <li>
+                ...and did I mention that you
+                <strong>should not</strong> modify the HTML? I was pretty
+                serious about that.
+              </li>
+            </ol>
+          </div>
+          <!-- END STEP  -->
+        </li>
+        <li>
+          <!-- START STEP -->
+          <h3>Publish</h3>
+          <p>
+            Open your <kbd>positioning.html</kbd>
+            website&nbsp;in your browser to make sure the web page displays
+            correctly. Pay special attention to whether your styles are
+            all displaying.
+            Push all the new files and changes to your GitHub Repo. Once it shows up in the GitHub repo, use that URL to
+            submit. Once verified, submit the URL to your page in
+            I-Learn.
+          </p>
+          <div class="callout">
+            <p>
+              Your URL will be a little longer this time around. You will
+              start with your normal URL, but this time we don't want the
+              index.html file...we want <kbd>positioning.html</kbd>, so your URL should
+              reflect that. For example, if I normally submitted
+              <kbd>https://my-repo.github.io/</kbd> as my URL, for this
+              assignment, I would submit
+              <kbd>https://my-repo.github.io/</kbd><strong>positioning.html</strong>
+            </p>
+          </div>
+          <!-- END STEP  -->
+        </li>
+      </ol>
+
+
+      <h3>Code</h3>
+      <p>
+        Here is the code (both HTML and CSS) that this activity is based off
+        of. If something has happened to the code you got with the setup at
+        the beginning of the semester, you can restore it with this. Create the
+        files as directed below and copy and paste the code.
+      </p>
+      <pre class=" language-markup line-numbers"><code class=" language-markup"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- HTML - Name: positioning.html --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Positioning Activity<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>positionstyles.css<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>WDD 130 positioning exercises<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        For each activity match make the boxes match the image by modifying the stylesheet.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Activity 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hint<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Hint 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Check out the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/activities/css-positioning.html<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>activity instructions<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> in Ilearn!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Follow the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/activities/css-positioning.html<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>instructions<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> to make the boxes match  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/images/example1.png<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> image.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blue1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Activity 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hint<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Hint 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Remember that the best way to shift elements around slightly on the page is with Margins.  You could also use Grid.  Either would work for this. If you choose margin remember that you can use a <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">&gt;</span></span>negative<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span> margin. (ie margin-top: -20px;)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Properties used:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>margin-top, margin-left<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...or...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-template-columns: 50px 50px 50px 50px 50px<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Overlap and stagger the squares like in <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/images/example2.png<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> image.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content2<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red2<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green2<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blue2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Activity 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hint<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Hint 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This one is going to be best solved with CSS Grid. Remember to make the boxes the right width first...then start moving them around. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Properties used:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>display:grid;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-template-columns:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-column-gap:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-column:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+        Create the 2 column layout like in <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/images/example3.png<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>  image.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content3<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red3<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green3<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blue3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Activity 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hint<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Hint 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>For the others we have been primarily concerned with width. For this one you will need to adjust height as well. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Properties used:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>display:grid;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-template-columns:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-row:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+        Duplicate the positioning in <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/images/example4.png<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> image. 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content4<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red4<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green4<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blue4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Activity 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hint<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Hint 5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Grid is <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>not<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span> the right way to do this.  In fact there is only one way to really do that...and that is with float. Remember that we float the thing we want the text to wrap around.  Also remember to start by making all the shapes the right size and shape.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Properties used:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>float: left;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+        Wrap the text around the square like in <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/images/example5.png<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> image. This is one case where Grid is NOT the right way to solve this one and will in fact make it harder if you try to use it!
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content5<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red5<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green5<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Step 01: Continue creating the main page for your chosen web site by modifying the CSS file you created in week 9's Adding Classes and IDs to Your Website assignment. This week, you will position all of the content on your main page using the CSS positioning techniques taught in KhanAcademy. When you are done, your webpage layout should reflect what you outlined in the wireframe you designed in the assignment Your Own Site Diagram and Wireframe in week 3. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+            If you have changed your mind on how you want the content of your main page laid out, take an opportunity to update your wireframe before completing this assignment (it is much easier to experiment with different layouts in a wireframe than it is to do so by modifying the CSS). Also, if you find that you are having trouble with using CSS positioning, feel free to review the concepts at the learn layout site: http://learnlayout.com/. You should be able to apply these principles to your site. For futher help, refer back to the Max Design site used in the beginning of the course for an example of how to implement your site design.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blue5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Activity 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hint<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Hint 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This one is all about visualizing the grid behind the layout. If you are having a hard time doing that first: all the sizes are even multiples of 100, and second here is another example with the lines drawn: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/images/example6-hint.png<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>example 6 with lines<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>. For this one you will find it easiest if you use px for the column width. You can also use <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span>z-index<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span> to control the element layering.    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Properties used:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>display:grid;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-template-columns:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-column:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>grid-row:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.w3schools.com/cssref/pr_pos_z-index.asp<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>z-index:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+        Duplicate the positioning in <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://byui-wdd.github.io/wdd130/images/example6.png<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> image.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content6<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red6<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green6<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>blue6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      <pre class=" language-css line-numbers"><code class=" language-css">  
+<span class="token comment">/* CSS - Name: "positionstyles.css" */</span>
+<span class="token comment">/* Activity 1 styles */</span>
+    <span class="token selector">.content1</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* This is the parent of the activity 1 boxes. */</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.red1</span> <span class="token punctuation">{</span> 
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.green1</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.yellow1</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.blue1</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+     <span class="token comment">/* Activity 2 styles */</span> 
+    <span class="token selector">.content2</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* This is the parent of the activity 2 boxes. */</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.red2</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.green2</span> <span class="token punctuation">{</span> 
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.yellow2</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.blue2</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+     <span class="token comment">/* Activity 3 styles */</span> 
+    <span class="token selector">.content3</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* This is the parent of the activity 3 boxes. */</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.red3</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.green3</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.yellow3</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.blue3</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+     <span class="token comment">/* Activity 4 styles */</span> 
+    <span class="token selector">.content4</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* This is the parent of the activity 4 boxes. */</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.red4</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.green4</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.yellow4</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.blue4</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+     <span class="token comment">/* Activity 5 styles */</span> 
+     <span class="token selector">.content5</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* This is the parent of the activity 5 boxes. */</span>
+         <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.red5</span> <span class="token punctuation">{</span> 
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.green5</span> <span class="token punctuation">{</span> 
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span> 
+
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.yellow5</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> 
+
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.blue5</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+     <span class="token comment">/* Activity 6 styles */</span> 
+     <span class="token selector">.content6</span> <span class="token punctuation">{</span>
+        <span class="token comment">/* This is the parent of the activity 6 boxes. */</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.red6</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.green6</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span> 
+    <span class="token selector">.yellow6</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token selector">.blue6</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
+    <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+
+
+<span class="token comment">/* Do not make any changes below here */</span>
+     <span class="token selector">.activity</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 70%<span class="token punctuation">;</span> 
+    <span class="token property">margin</span><span class="token punctuation">:</span> 20px auto<span class="token punctuation">;</span> 
+    <span class="token property">font-family</span><span class="token punctuation">:</span> Arial, sans-serif<span class="token punctuation">;</span> 
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span> 
+    <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> 
+    <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span> 
+    <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
+
+<span class="token selector">.hint</span> <span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid grey<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #e0e0e0<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint h3</span> <span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint:hover</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #d0d0d0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint &gt; div</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.hint input[type=checkbox]</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.hint input[type=checkbox]:checked ~ div</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.hint i</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-6px, 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> -3px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint i:before, .hint i:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 9px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint i:before</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>2px, 0<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint i:after</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-2px, 0<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>-45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.hint input[type=checkbox]:checked ~ i:before</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-2px, 0<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint input[type=checkbox]:checked ~ i:after</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>2px, 0<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>-45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.hint a</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    </main>
+    <!-- end #article -->
+  </div>
+  <script src="./WDD 130 _ CSS Positioning Activity_files/course.js.download"></script>
+  <script src="./WDD 130 _ CSS Positioning Activity_files/prism.js.download"></script>
+
+
+
+<div id="torrent-scanner-popup" style="display: none;"></div></body></html>

@@ -1,0 +1,49 @@
+body{
+    margin: 0 auto;
+    text-align: center;
+    align-self: auto;
+}
+.grid{
+    size: 40%;
+    margin: 0 auto;
+    display: inline-block;
+    align-self: center;
+}
+.container{
+    position: relative;
+    text-align: center;
+    z-index: 11;
+}
+.top-center{
+    position: absolute;
+    font-size: 10em;
+    left: 25%;
+    top: 28%;
+    bottom: 0;
+    font-weight: bolder;
+  }
+.central{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.square {
+    height: 600px;
+    width: 600px;
+    background-color: rgb(206, 204, 204);
+  }
+  *{
+    text-align: center;
+  }
+  .bottom-right{
+    font-size: 6em;
+    color: crimson;
+    font-style: bold;
+    font-weight: bold;
+    bottom: 50%;
+    right: 0;
+  }
+  .grid{
+    z-index: -1000;
+    position: relative;
+  }

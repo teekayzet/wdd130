@@ -1,0 +1,99 @@
+body{
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: black;
+}
+.logo{
+    width: 80px;
+}
+nav a{
+    text-align: center;
+    color: rgb(0,146,255);
+    text-decoration: none;
+    padding: 35px;
+    font-family: ComicSansMS, ComicSans, cursive;
+}
+nav{
+    float: right;
+}
+nav a:hover{
+    background-color: rgb(0,146,255);
+    color: #bde0fe;   
+}
+#content{
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 22px;
+}
+#hero_img{
+    width: 100%;
+    height: 75%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero_box {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.hero_text {
+    position: absolute;
+    top: 30%;
+    left: 7%;
+    color: rgb(0,146,255);
+}
+h1{
+    text-align: center;
+    font-size:100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+p{
+    font-family: cursive;
+}
+#me_img{
+    width: 20%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.about_me{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    text-align: justify;
+    width: 50%;
+}
+footer{
+    background: rgb(0,146,255);
+    background: linear-gradient(90deg, rgba(0,146,255,1) 0%, rgba(1,42,73,1) 25%, rgba(0,0,0,1) 50%, rgba(1,42,73,1) 75%, rgba(0,146,255,1) 100%);
+    color: rgb(0, 146, 255);
+    padding: 25px 50px;
+    margin-top: -20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.personal_site{
+    position: absolute;
+    top: 5%;
+    right: 5%   ;
+    width: 20%;
+}
+.social{
+    size: 50px;
+}
+.ig{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.twitter{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.fb{
+    padding-left: 100px;
+    padding-right: 100px;
+}

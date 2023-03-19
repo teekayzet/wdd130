@@ -1,0 +1,129 @@
+@import url('https://fonts.googlhttps://fonts.googleapis.com/css2?family=Lobster&family=Mynerve&family=Shantell+Sans:wght@300&display=swapeapis.com/css?family=Lobster|Shantell+Sans');
+body{
+    height: 100%;
+    background-color: white;
+    color: black;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+#content{
+    max-width: 1600px;
+    margin: 0 auto;
+    font-size: 22px;
+    text-align: center;
+}
+#logo_link{
+    padding-top: 5px;
+}
+nav {
+    background-color: #F2C5CD;
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+    width: 100%;
+  }
+  nav  {
+    list-style-type: none;
+    display: flex;
+  
+  }
+  nav a {
+    padding:1em;
+    min-width: 120px;
+    text-decoration: none;
+    padding: 10px;
+  
+  }
+  nav a:link, nav a:visited {
+    color: black;
+  }
+  nav a:hover {
+    color: white;
+    background-color: #EC1E43;
+  }
+.logo{
+    width: 100px;
+}
+#logo_link{
+    padding: 5px;
+    justify-self: center;
+    align-self: center;
+}
+#hero_img{
+    width: 100%;
+}
+.poem{
+    text-align: left;
+    font-size: 2em;
+}
+.button_box{
+    background-color: gray;
+    width: 150px;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;  
+    text-align: center; 
+}
+.button_box:hover{
+    background-color: #EC1E43;
+    color: black;
+}
+#prjct{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr;
+}
+.msg h2{
+    text-align: left;
+    font-size: 2em;
+}
+#feedback{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.msg{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 50px;
+    text-align: left;
+}
+.msg2{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 50px;
+    text-align: left;
+}
+footer{
+    background-color: #ffc8dd;
+    color: black;
+    padding: 25px 50px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer p a:hover{
+    text-decoration: underline;
+}
+footer p {
+    font-size: 1.2em;
+}
+footer a{
+    background-color: #F2C5CD;
+    color: black;
+    text-decoration: none;
+}
+footer a:hover{
+    background-color: #EC1E43;
+    color: black;
+}
+footer .social img{
+    padding-top: 15px;
+}
+.social{
+    text-align: left;
+}

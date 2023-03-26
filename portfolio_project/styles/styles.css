@@ -5,6 +5,7 @@ body{
     color: black;
     max-width: 1600px;
     margin: 0 auto;
+    padding: 20px;
 }
 #content{
     max-width: 1600px;
@@ -213,4 +214,44 @@ footer .social img{
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+#text{
+  text-align: left;
+}
+.Hero_about{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.hero{
+  grid-row: 1/4;
+  grid-column: 1/2;
+}
+.hero_txt_1 {
+  grid-column: 2/4;
+  grid-row: 2;
+  color: black;
+  size: 2.5em;
+  text-align: justify;
+}
+.me_1{
+  text-align: justify;
+  background-color: white;
+  font-size: 2em;
+}
+#me{
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 2fr;
+}
+#myImg{
+  max-width: 80%;
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+.me_2{
+  font-size: 2em;
+  text-align: justify;
+  grid-column: 3/6;
+  grid-row: 1/2;
+  color: black;
 }

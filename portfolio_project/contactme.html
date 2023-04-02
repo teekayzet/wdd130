@@ -4,67 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact me</title>
+    <title>About me</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <div id="content">
         <header>
-            <a id="logo_link" href="index.html">
+            <nav>
+                <a id="logo_link" href="index.html">
                 <img class="logo" src="images/logo.png" alt="TM_initials">
             </a>
-            <nav>
                 <a href="\wdd130\portfolio_project\index.html#projects" id="projects">Projects</a>
                 <a href="aboutme.html">About</a>
                 <a href="contactme.html">Contact me</a>
             </nav>
         </header> 
-        <main>
-
-                <div id="hero_txt">
-                    <h1>
-                    WE CAN CREATE BEAUTIFUL THINGS TOGETHER
-                    </h1>
-                <div id="contact_section">
-                    <h2>
-                        leave your message here
-                    </h2>
-                    <form action="/my-handling-form-page" method="post">
-                        <ul>
-                            <li>
-                                <label for="name">Name*:</label>
-                                <input type="text" id="name" name="user_name" />
-                            </li>
-                            <li>
-                                <label for="mail">Email*:</label>
-                                <input type="email" id="mail" name="user_email" />
-                            </li>
-                            <li>
-                                <label for="msg">Message*:</label>
-                                <textarea id="msg" name="user_message"></textarea>
-                            </li>
-                            <li class="button">
-                            <button type="submit">Submit</button>
-                            </li>
-                        </ul>
-                    </form>
+        <main class="abot">
+            <div class="imah">
+                <img class="iimmgg" src="images/tech-meeting-flatlay.jpg" alt="">
+            </div>
+            <div id="hero_txt">
+                <h1>
+                WE CAN CREATE BEAUTIFUL THINGS TOGETHER
+                </h1>
+            <div id="contact_section">
+                <h2>
+                    leave your message here
+                </h2>
+                <form action="mail.php" method="post">
+                    <div>
+                    <label for="name">Your Name</label>
                 </div>
+                    <div>
+                    <input type="text"  name="name" placeholder="Your name..">
                 </div>
+                    <label for="lname">Email</label>
+                    <input type="email"  name="email" placeholder="Your email..">
+                   
+                    <label for="message">Message</label>
+                    <textarea  name="message" placeholder="Write something.." style="height:200px"></textarea>
+                    <input type="submit" value="Submit">
+                  </form>
+            </div>
+            </div>
             </div>
         </main>
-        
         <footer>
             <p>Find me on these platforms</p>
             <p><a href="site_plan.html">Site Plan</a></p>
             <div class="social">
-                <a href="https://facebook.com" target="_blank">
-                    <img src="#" alt="fb icon">
+                <a href="https://www.facebook.com/takudzwa.mutamburigwa" target="_blank">
+                    <img src="images/facebook.png" alt="fb icon">
                 </a>
-                <a href="https://twitter.com" target="_blank">
-                    <img src="#" alt="twitter icon">
+                <a href="https://twitter.com/TakudzwaMutamb7" target="_blank">
+                    <img src="images/twitter.png" alt="twitter icon">
                 </a>
-                <a href="https://instagram.com" target="_blank">
-                    <img src="#" alt="instagram icon">
+                <a href="https://www.instagram.com/tee_kay_zet/" target="_blank">
+                    <img src="images/instagram.png" alt="instagram icon">
                 </a>
             </div>
         </footer>

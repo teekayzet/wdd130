@@ -254,3 +254,24 @@ footer .social img{
   grid-row: 1/2;
   color: black;
 }
+.abot{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.imah{
+  grid-column: 1/2;
+}
+
+.contact_section{
+grid-column: 2/3;
+}
+form{ 
+  display: grid;
+}
+.iimmgg{
+  width: 780px;
+  height: 586.23px;
+}
+form{
+  padding: 20px;
+}

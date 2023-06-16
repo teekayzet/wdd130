@@ -1,0 +1,158 @@
+	body, div, li, h1, h2, p
+	{
+		margin:0;
+		padding:0;
+	}
+	li {
+		margin-bottom:6px;
+	}
+	body {
+		font-family:Arial,"Lucida Grande",sans-serif;
+		color:#333;
+		font-size:15px;
+		line-height:1.8em;
+		-webkit-font-smoothing:antialiased;
+	}
+	img {
+		display:block;
+		width:100%;
+	}
+	a {
+		color:#4285f4;
+		text-decoration:none;
+	}
+	a:hover {
+		text-decoration:underline;
+	}
+	h1 {
+		font-size:28px;
+	}
+	h1, h2 {
+		font-weight:normal;
+		margin-bottom:16px;
+	}
+	h2 {
+		margin-top:25px;
+		margin-bottom:10px;
+	}
+	p {
+		margin-bottom:14px;
+	}
+	p a:hover {
+		text-decoration:underline;
+	}
+	span {
+		background:#eee;
+		border:1px solid #ccc;
+		border-radius:2px;
+		padding:0 3px;
+		padding-bottom:1px;
+		margin:0 4px;
+		font-size:14px;
+		font-family:monospace;
+	}
+	.header {
+		padding:26px 0;
+		border-bottom:1px solid #eaeaea;
+	}
+	.main {
+		margin-top:35px;
+		margin-bottom:70px;
+		min-height:180px;
+	}
+	.footer {
+		border-top:1px solid #eaeaea;
+		text-align:center;
+		padding-top:15px;
+		padding-bottom:35px;
+		font-size:13px;
+	}
+	.flex {
+		display:flex;
+	}
+	.flex-box {
+		flex:1;
+	}
+	.flex-center {
+		align-items:center;
+	}
+	.content-box {
+		max-width:680px;
+		margin:0 auto;
+		padding:0 20px;
+	}
+	.icon {
+		display:block;
+		width:32px;
+		height:32px;
+		background-image:url(assets/icon64.png);
+		background-size:100%;
+	}
+	.nav-links {
+		margin:0;
+		padding:0;
+	}
+	.nav-links li {
+		display:inline-block;
+		margin:0;
+	}
+	.nav-links a {
+		color:inherit;
+	}
+	.header-links {
+		font-size:17px;
+	}
+	.header-links li:after {
+		content:"/";
+		padding-left:15px;
+		padding-right:10px;
+		color:#000;
+	}
+	.header-links li a:hover {
+		text-decoration:underline;
+	}
+	.header-links li:last-child:after {
+		content:"";
+		padding:0;
+	}
+	.footer-links li {
+		color:#777;
+		margin:0 6px;
+	}
+	.button-wrap {
+		text-align:center;
+		margin-top:50px;
+		margin-bottom:40px;
+	}
+	.button {
+	    display: inline-block;
+	    color: #fff;
+	    background-color: #4285f4;
+	    border-radius: 4px;
+	    text-transform: uppercase;
+	    min-width: 152px;
+	    line-height: 24px;
+	    padding: 12px 24px;
+		padding-bottom:10px;
+	    user-select:none;
+		font-size:14px;
+		font-weight:bold;
+	}
+	.img-wrap {
+		margin:25px 0;
+	}
+	
+	@media (max-width:480px) {
+		h1 {
+			font-size:24px;
+		}
+		h2 {
+			font-size:20px;
+		}
+		.main {
+			padding-top:5px;
+		}
+		.img-wrap {
+			margin:20px -20px;
+		}
+	}
